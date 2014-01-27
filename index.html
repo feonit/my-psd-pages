@@ -1,17 +1,18 @@
 <!html DOCTIPE>
 <html>
 <head>
+    <meta charset="utf-8">
+    <title>background-color</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="resets.css">
 </head>
 <body>
 <div id="content">
-	<header>
-		<div class="header-logo">
+	<div id="header">
+		<div id="header-logo">
             <span>Round.ed</span>
         </div>
         <div class="light"></div>
-        <div class="header-nav">
+        <div id="header-nav">
             <ul>
                 <li class="active border"><a href="#">Home</a></li>
                 <li><a href="#">About Me</a></li>
@@ -20,7 +21,7 @@
                 <li><a href="#">Contact</a></li>
             </ul>
         </div>
-	</header>
+	</div>
     <div id="main">
         <div class="main-light-top"></div>
         <div class="main-light-center"></div>
@@ -86,7 +87,7 @@
         <div class="lines"></div>
         <div id="about">
             <h2>About me</h2>
-            <article id="about-content">
+            <div id="about-content" class="article">
                 <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim
                 </p> <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim
                 </p> <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim
@@ -94,7 +95,7 @@
                 </p> <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim
                 </p>
                 <button class="button-small">Read more..</button>
-            </article>
+            </div>
         </div>
         <div id="portfolio">
             <h2>My Portfolio</h2>
@@ -132,9 +133,10 @@
                 </div>
             </div>
         </div>
+        <div style="clear: left"></div>
 	</div>
 </div>
-<footer id="footer">
+<div id="footer">
     <div class="footer-left">Copyright 2010</div>
     <div class="footer-right">
         <ul>
@@ -145,6 +147,7 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </div>
-</footer>
+    <div style="clear: left"></div>
+</div>
 </body>
 </html>
