@@ -1,6 +1,13 @@
 @font-face {
 font-family: Trebuchet;
-    src: url(TrebuchetMS.ttf);
+    src: url(fonts/TrebuchetMS.ttf);
+}
+@font-face {
+    font-family: 'Trebuchet';
+    src: url(fonts/trebuc.ttf);
+    src: url('fonts/trebuc.eot');
+    src: url('fonts/trebuc.eot?#iefix') format('embedded-opentype'),
+    url('fonts/trebuc.woff') format('woff');
 }
 *{
     padding: 0;
@@ -127,6 +134,7 @@ button span:before{
     position: absolute;
     right: 0;
     margin-right: 2.25em;
+    height: 2em;
 }
 #search:focus{
     color: #6f6563;
