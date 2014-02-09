@@ -36,7 +36,7 @@
         alert('Bad connection!');
     }
 
-    $.when( $.ajax( "ajax/customers.json" ), $.getJSON( "ajax/customers-groups.json" ) )
+    $.when( $.getJSON( "ajax/customers.json" ), $.getJSON( "ajax/customers-groups.json" ) )
         .then( myFunc, myFailure );
 
 })(jQuery)
