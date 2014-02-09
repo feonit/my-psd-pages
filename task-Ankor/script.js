@@ -3,10 +3,10 @@
     var customers, customersGroups;
 
     function getGroupTitle(id){
-        if (customersGroups === "undefined") {
+        if (typeof customersGroups === "undefined") {
             return 0;
         }
-        if (getGroupTitle.hash === "undefined"){
+        if (typeof getGroupTitle.hash === "undefined"){
             getGroupTitle.hash = {};
             for (var i = 0, len = customersGroups.length; i < len; i +=1){
                 getGroupTitle.hash[customersGroups[i].id] = customersGroups[i].title;
