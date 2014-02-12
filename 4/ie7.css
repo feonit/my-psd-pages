@@ -1,3 +1,5 @@
-html, body {
-    background: red;
+ul li{
+    /*ie not support inline-block*/
+    zoom: 1;
+    *display: inline;
 }

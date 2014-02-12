@@ -12,13 +12,13 @@ html, body {
 }
 #main{
     min-height: 100%; /*ie7 bad*/
-    background: #251D1B;
+    background: #140F0D;
     color: #998778;
     text-shadow: 2px 2px 4px black;
 }
-
-.gradient {
-    filter: none;
+#header{
+    background: #251D1B;
+    padding-bottom: 30px;
 }
 #main:after{
     content: '';
@@ -27,20 +27,23 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: -moz-radial-gradient(top, ellipse cover,  rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
-    background: -webkit-gradient(radial, top top, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.1)), color-stop(100%,rgba(255,255,255,0)));
-    background: -webkit-radial-gradient(top, ellipse cover,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
-    background: -o-radial-gradient(top, ellipse cover,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
-    background: -ms-radial-gradient(top, ellipse cover,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
-    background: radial-gradient(ellipse at top,  rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wOSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.09) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.09)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.09) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.09) 0%,rgba(255,255,255,0) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.09) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  rgba(255,255,255,0.09) 0%,rgba(255,255,255,0) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#17ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
 }
 /*http://www.xiper.net/collect/html-and-css-tricks/karkas-verstki/podval-k-nizu.html*/
 #footer{
     height: 75px;
     margin-top: -75px;
+    line-height: 75px;
     background: #000000;
     text-align: center;
-    line-height: 75px;
 }
 #footer span{
     color: #534c46;
@@ -55,94 +58,89 @@ h1{
     font-family:  Myriad Pro;
     font-weight: normal;
     font-variant: small-caps;
-}
-
-h1{
     position: relative;
-}
-h1:before{
-    content: url(image/light.png);
-    position: absolute;
-    left: 0;
-    right: 0;
+    background-image: url(image/light.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
 }
 ul{
     position: relative;
     text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    border-bottom: 1px solid #46413e; /*  for ie7 not support :after*/
     margin-top: 50px;
-    margin-bottom: 30px;
 }
 ul li{
     display: inline-block;
-    padding: 0 15px;
+    height: 40px;
+    margin: 0 20px;
+    zoom: 1;               /*  for ie7 not support inline-block*/
+    *display: inline;      /*  for ie7 not support inline-block*/
+}
+ul:after{
+    content: '';
+    display: block;
+    border-top: 1px solid #000000;
+    position: absolute;
+    width: 100%;
+    bottom: 0;     /*  for black line*/
 }
 a{
     color: #6b6662;
     text-decoration: none;
 }
 .active{
+    border-bottom: 2px solid #ffffff;
+    margin-bottom: -1px;
     position: relative;
+    z-index: 10;
+}
+.active a{
     color: #c6c5c5;
 }
-.active:after{
-    content: '';
-    display: block;
-    position: absolute;
-    width:100%;
-    bottom: -13px;
-    left:0;
-    border-bottom: 2px solid #ffffff;
-}
-ul:after{
-    content: '';
-    display: block;
-    width: 50%;
-    margin: 10px auto;
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #46413e;
-}
+
+/* description */
+
 .description{
     background: #140F0D;
     overflow: hidden;
     padding-bottom: 75px;
     font-family: Myriad Pro;
     padding: 0 20%;
+/*
+    padding: 0 20%;
+*/
     font-size: 0.9em;
 }
 .description h2{
-    margin: 30px 0 10px;
     text-align: center;
+    margin: 20px 0;
 }
 /*border-box need for FF*/
-.box{
+.box-left, .box-right{
     float: left;
     width: 50%;
-    padding: 25px;
-    box-sizing: border-box;
-    position:relative;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    margin-bottom: 100px; /*footer 75+25*/
+    padding: 15px 0;
 }
-.box:first-of-type:before{
-    content: '';
-    position: absolute;
-    right:0;
-    height: 100%;
-    border-left:1px solid #000000;
-    border-right:1px solid #251D1B;
+.box-left{
+    border-right:1px solid #000000;
+    margin-right: -1px;
+    padding-right: 30px;
 }
-/*for footer*/
-.box:last-of-type:after{
-    content: '';
-    height: 100px;
-    display: block;
+.box-right{
+    border-left:1px solid #251D1B;
+    margin-left: -1px;
+    padding-left: 30px;
 }
 .slider, #box{
     height: 300px;
     width: 900px;
     margin: 0 auto;
-
 }
 .slider{
     background: #44312E;
@@ -155,7 +153,6 @@ ul:after{
     left: -17px;
     top: -17px;
 }
-
 .slider:after{
     content: url(image/angle-right.png);
     position: absolute;
@@ -164,19 +161,16 @@ ul:after{
 }
 .slider #play{
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+    left:50%;
+    top:50%;
+    margin-left: -53px;
+    margin-top: -53px;
 }
-
 .slider img{
     position: absolute;
-    top:0;
-    bottom: 0;
+    top:50%;
+    margin-top: -45px;
     left: 102%;
-    margin: auto;
 }
 .slider p{
     position: absolute;
@@ -184,7 +178,6 @@ ul:after{
     left: 107%;
     width: 100px;
     margin: auto;
-
     -webkit-transform: rotate(320deg);
     -moz-transform: rotate(320deg);
     -o-transform: rotate(320deg);
@@ -193,6 +186,7 @@ ul:after{
 }
 
 /*shadows*/
+
 #box{
     position: relative;
     z-index: 1;
@@ -206,7 +200,7 @@ ul:after{
     width: 50%;
     top: 80%;
     max-width: 300px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0);
     -webkit-box-shadow: 10px 20px 20px rgba(0,0,0, 0.7);
     -moz-box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.7);
     box-shadow: 10px 20px 20px rgba(0, 0, 0, 0.7);
