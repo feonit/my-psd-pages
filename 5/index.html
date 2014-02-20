@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Дело</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <!--[if IE]>
+    <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script src="javascript/script.js"></script>
+</head>
+<body>
+<div id="main">
+    <div id="header">
+        <img id="csssr" src="images/csssr.png" title="CSSSR. Секретный архив учреждения">
+        <img id="deal" src="images/deal.png" title="Дело">
+        <img id="secret" src="images/secret.png" title="Секретно. Заполнено собственноручно">
+    </div>
+    <form>
+        <div id="list">
+            <div>
+                <label>
+                    <h3>Полное ФИО</h3>
+                    <input name="name" class="line1" type="text" maxlength="30" value="Орлов Леонид Сергеевич">
+                </label>
+            </div>
+            <div>
+                <label>
+                    <h3>Год рождения</h3>
+                    <input name="birth" class="line2" type="text" maxlength="4" value="1991">
+                </label>
+            </div>
+            <div>
+                <label>
+                    <h3>Место жительства</h3>
+                    <input name="location" class="line3" maxlength="30" value="г. Подольск, Россия">
+                </label>
+            </div>
+            <div>
+                <label>
+                    <h3>Скайп</h3>
+                    <input name="skype" class="line4" type="text" maxlength="30" value="feonitu">
+                </label>
+            </div>
+            <div>
+                <label>
+                    <h3>Почта</h3>
+                    <input name="email" class="line4" type="email" maxlength="30" value="feonitu@yandex.ru">
+                </label>
+            </div>
+        </div>
+        <div id="radio">
+            <h3>Выпускник <span class="school">htmlacademic.ru</span></h3>
+            <label>
+                <input type="radio" name="school">
+                <span>Да</span>
+            </label>
+            <label>
+                <input type="radio" name="school" checked>
+                <span>Нет</span>
+            </label>
+        </div>
+        <div id="check-box">
+            <h3>Практические навыки</h3>
+            <p class="comment">Отметьте только те технологии и типы задач, с которыми вы хорошо знакомы. Отсутсвие опыта отнюдь не означает, что у вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.</p>
+            <div id="one" class="box-float">
+                <label>
+                    <input type="checkbox" name="skill[jquery]" checked>
+                    <span>jQuery</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[bootstrap]" checked>
+                    <span>Twitter Bootstrap</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[backbone]">
+                    <span>Backbone.js</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[git]" checked>
+                    <span>Git</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[ajax]" checked>
+                    <span>AJAX</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[bem]">
+                    <span>Методология БЕМ</span>
+                </label>
+            </div>
+            <div id="two" class="box-float">
+                <label>
+                    <input type="checkbox" name="skill[bitrix]">
+                    <span>Верстка под Битрикс</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[wordpress]">
+                    <span>Темы для Wordpress</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[joomla]">
+                    <span>Шаблоны под Joomla</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[android]">
+                    <span>Верстка под Андройд</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[ios]">
+                    <span>Верстка под iOS</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[windows]">
+                    <span>Верстка под Windows Phone</span>
+                </label>
+            </div>
+            <div id="three" class="box-float">
+                <label>
+                    <input type="checkbox" name="skill[mail]">
+                    <span>Верстка рассылок</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[adaptive]">
+                    <span>Адаптивная верска</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[dropbox]">
+                    <span>Использую Dropbox</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[gmail]">
+                    <span>Использую Gmail</span>
+                </label>
+                <label>
+                    <input type="checkbox" name="skill[github]" checked>
+                    <span>Использую Github</span>
+                </label>
+            </div>
+        </div>
+        <div id="slider-box">
+            <h3>Уровень владения JavaScript</h3>
+            <div id="slider">
+                <input type="text" name="skill[javascript]" value="4">
+                <img src="images/arrow.png">
+                <div>
+                    <span id="w-1">Не владею</span>
+                    <span id="w-2">Использую готовые решения</span>
+                    <span id="w-3">Использую готовые решения и умею их переделывать</span>
+                    <span id="w-4">Пишу сложные скрипты</span>
+                </div>
+            </div>
+        </div>
+        <div id="date">
+            <label>
+                <h3>Дата заполнения</h3>
+                <input name="date" class="line1" type="text" maxlength="10" value="23.02.2014">
+            </label>
+        </div>
+    </form>
+</div>
+</body>
+</html>
