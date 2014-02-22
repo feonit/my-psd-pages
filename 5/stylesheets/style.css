@@ -162,7 +162,7 @@ h3 {
     radio
 */
 #radio {
-  margin-top: 16px;
+  margin-top: 10px;
   position: relative;
   height: 60px;
   font-size: 22.43px;
@@ -184,6 +184,7 @@ h3 {
 }
 #radio h3 span {
   font-size: 22px;
+  line-height: 28px;
   color: #014f98;
   margin-right: 35px;
   position: relative;
@@ -195,6 +196,7 @@ h3 {
   height: 0;
   bottom: 0;
   left: 0;
+  background: red;
   border-top: 1px solid #aca794;
   border-bottom: 1px solid #3a6d97;
 }
@@ -206,22 +208,32 @@ h3 {
   color: #3d3d3d;
   position: relative;
   display: block;
-  margin-left: 18px;
   margin-top: 10px;
   margin-bottom: 20px;
   font-family: 'PT Sans Regular',sans-serif;
   font-size: 14px;
   text-shadow: black 0 0 0;
   line-height: 22px;
+  /*    &:before{
+          content: "*";
+          font-size: 36px;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 11px;
+          margin-left: -18px;
+      }*/
 }
-.comment:before {
-  content: "*";
-  font-size: 36px;
+.comment p {
+  margin-left: 18px;
+}
+.comment .star {
   display: block;
   position: absolute;
   left: 0;
-  top: 11px;
-  margin-left: -18px;
+  top: 4px;
+  line-height: 36px;
+  font-size: 36px;
 }
 
 #check-box {

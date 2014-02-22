@@ -4,6 +4,12 @@
     <title>Дело</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+    <!--[if IE 7]>
+    <link href="stylesheets/ie7.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if (gte IE 7)&(lte IE 9)]>
+    <link href="stylesheets/ie.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
 </head>
 <body>
 <div id="main">
@@ -58,7 +64,10 @@
         </div>
         <div id="check-box">
             <h3>Практические навыки</h3>
-            <p class="comment">Отметьте только те технологии и типы задач, с которыми вы хорошо знакомы. Отсутсвие опыта отнюдь не означает, что у вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.</p>
+            <div class="comment">
+                <span class="star">*</span>
+                <p>Отметьте только те технологии и типы задач, с которыми вы хорошо знакомы. Отсутсвие опыта отнюдь не означает, что у вас меньше шансов стать нашим сотрудником. Это означает, что вы будете получать те задачи, с которыми гарантировано будете справляться.</p>
+            </div>
             <div id="one" class="box-float">
                 <label>
                     <input type="checkbox" name="skill[jquery]" checked>
@@ -156,10 +165,10 @@
     </form>
 </div>
 <script src="javascript/jquery-1.10.2.min.js"></script>
-<!--[if (gte IE 6)&(lte IE 9)]>
-    <link href="stylesheets/ie.css" rel="stylesheet" type="text/css" />
+<!--[if (gte IE 7)&(lte IE 9)]>
     <script src="javascript/ie.js"></script>
 <![endif]-->
+
 <script src="javascript/script.js"></script>
 </body>
 </html>
