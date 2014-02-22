@@ -146,16 +146,16 @@ h3 {
   box-shadow: none;
 }
 #list div input.line1 {
-  background-image: url(../images/lines/line-1.png);
+  background: url(../images/lines/line-1.png) 0 100% no-repeat;
 }
 #list div input.line2 {
-  background-image: url(../images/lines/line-2.png);
+  background: url(../images/lines/line-1.png) -10px 100% no-repeat;
 }
 #list div input.line3 {
-  background-image: url(../images/lines/line-3.png);
+  background: url(../images/lines/line-1.png) -45px 100% no-repeat;
 }
 #list div input.line4 {
-  background-image: url(../images/lines/line-4.png);
+  background: url(../images/lines/line-4.png) 0px 100% no-repeat;
 }
 
 /*
@@ -214,15 +214,6 @@ h3 {
   font-size: 14px;
   text-shadow: black 0 0 0;
   line-height: 22px;
-  /*    &:before{
-          content: "*";
-          font-size: 36px;
-          display: block;
-          position: absolute;
-          left: 0;
-          top: 11px;
-          margin-left: -18px;
-      }*/
 }
 .comment p {
   margin-left: 18px;
@@ -363,16 +354,16 @@ h3 {
   box-shadow: none;
 }
 #date input.line1 {
-  background-image: url(../images/lines/line-1.png);
+  background: url(../images/lines/line-1.png) 0 100% no-repeat;
 }
 #date input.line2 {
-  background-image: url(../images/lines/line-2.png);
+  background: url(../images/lines/line-1.png) -10px 100% no-repeat;
 }
 #date input.line3 {
-  background-image: url(../images/lines/line-3.png);
+  background: url(../images/lines/line-1.png) -45px 100% no-repeat;
 }
 #date input.line4 {
-  background-image: url(../images/lines/line-4.png);
+  background: url(../images/lines/line-4.png) 0px 100% no-repeat;
 }
 #date input {
   width: 200px;

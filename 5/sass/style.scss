@@ -33,16 +33,16 @@ $inputs-spacing: 3px;
         }
 
         &.line1{
-            background-image: url(../images/lines/line-1.png);
+            background: url(../images/lines/line-1.png) 0 100% no-repeat;
         }
         &.line2{
-            background-image: url(../images/lines/line-2.png);
+            background: url(../images/lines/line-1.png) -10px 100% no-repeat;
         }
         &.line3{
-            background-image: url(../images/lines/line-3.png);
+            background: url(../images/lines/line-1.png) -45px 100% no-repeat;
         }
         &.line4{
-            background-image: url(../images/lines/line-4.png);
+            background: url(../images/lines/line-4.png) 0px 100% no-repeat;
         }
     }
 }
@@ -188,15 +188,6 @@ h3{
     text-shadow: rgba(0, 0, 0, 1) 0 0 0;
     line-height: 22px;
 
-/*    &:before{
-        content: "*";
-        font-size: 36px;
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 11px;
-        margin-left: -18px;
-    }*/
     p{
         margin-left: 18px;
     }

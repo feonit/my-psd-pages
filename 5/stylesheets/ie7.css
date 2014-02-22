@@ -1,3 +1,9 @@
 #radio h3 span {
   text-decoration: underline;
 }
+
+/* bug ie overflow
+*/
+form {
+  position: relative;
+}
