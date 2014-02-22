@@ -8,7 +8,7 @@ images_dir = ""
 javascripts_dir = "javascripts"
 
 
-environment = :production
+environment = :development
 #:production :development
 
 output_style = (environment == :production) ? :compressed : :expanded

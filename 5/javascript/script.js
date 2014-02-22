@@ -128,7 +128,7 @@
     }());
 
     MYAPP.slider = MYAPP.slider || (function(){
-        var TIME_ANIMATE = 0,
+        var TIME = 1, /*for ie8*/
             makeDraggable = MYAPP.dragMaster.makeDraggable,
             pos = [-7, 135, 363, 746];
 
@@ -152,6 +152,8 @@
                     from = parseInt(from, 10);
                     to = parseInt(to, 10);
 
+                    var abs = Math.abs(from - to);
+
                     if (from === to){
                          return;
                     }
@@ -160,12 +162,14 @@
                         id;
 
                     id = setInterval(function(){
+
                         from += direct;
+
                         activeElement.style.left = from + 'px';
                         if (from === to){
                             clearInterval(id);
                         }
-                    }, TIME_ANIMATE)
+                    }, TIME)
                 }
 
                 function setActiveElement(){

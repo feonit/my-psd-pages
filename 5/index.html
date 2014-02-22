@@ -4,10 +4,6 @@
     <title>Дело</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-    <!--[if IE]>
-    <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
-    <script src="javascript/script.js"></script>
 </head>
 <body>
 <div id="main">
@@ -21,7 +17,7 @@
             <div>
                 <label>
                     <h3>Полное ФИО</h3>
-                    <input name="name" class="line1" type="text" maxlength="30" value="Орлов Леонид Сергеевич">
+                    <input name="name" class="line1" type="text" maxlength="32" value="Орлов Леонид Сергеевич">
                 </label>
             </div>
             <div>
@@ -33,31 +29,31 @@
             <div>
                 <label>
                     <h3>Место жительства</h3>
-                    <input name="location" class="line3" maxlength="30" value="г. Подольск, Россия">
+                    <input name="location" class="line3" type="text" maxlength="29" value="г. Подольск, Россия">
                 </label>
             </div>
             <div>
                 <label>
                     <h3>Скайп</h3>
-                    <input name="skype" class="line4" type="text" maxlength="30" value="feonitu">
+                    <input name="skype" class="line4" type="text" maxlength="36" value="feonitu">
                 </label>
             </div>
             <div>
                 <label>
                     <h3>Почта</h3>
-                    <input name="email" class="line4" type="email" maxlength="30" value="feonitu@yandex.ru">
+                    <input name="email" class="line4" type="email" maxlength="35" value="feonitu@yandex.ru">
                 </label>
             </div>
         </div>
         <div id="radio">
-            <h3>Выпускник <span class="school">htmlacademic.ru</span></h3>
+            <h3>Выпускник <span>htmlacademic.ru</span></h3>
             <label>
-                <input type="radio" name="school">
+                <input type="radio"  name="school">
                 <span>Да</span>
             </label>
             <label>
-                <input type="radio" name="school" checked>
-                <span>Нет</span>
+                <input type="radio"  name="school" checked>
+                <span class="yes">Нет</span>
             </label>
         </div>
         <div id="check-box">
@@ -159,5 +155,11 @@
         </div>
     </form>
 </div>
+<script src="javascript/jquery-1.10.2.min.js"></script>
+<!--[if (gte IE 6)&(lte IE 9)]>
+    <link href="stylesheets/ie.css" rel="stylesheet" type="text/css" />
+    <script src="javascript/ie.js"></script>
+<![endif]-->
+<script src="javascript/script.js"></script>
 </body>
 </html>
