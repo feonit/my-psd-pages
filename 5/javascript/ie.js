@@ -1,5 +1,7 @@
 (function($){
 
+    //Polyfills for ie 7
+
     if ('function' !== typeof Array.prototype.reduce) {
         Array.prototype.reduce = function(callback, opt_initialValue){
             'use strict';
@@ -70,35 +72,33 @@
     }
 
  $(function(){
-     var radioBox = $('#radio'),
-        checkBox = $('#check-box'),
-         radioInputs;
+     var radioBox = $('#radio-box'),
+         checkBox = $('#check-box'),
+         links;
 
      checkBox.find('input:checked').next().addClass('yes');
 
-     radioInputs = radioBox.find('input:checked').next().addClass('yes')
+     links = radioBox.find('input:checked').next().addClass('yes')
          .add(   radioBox.find('input:not(:checked)').next() );
 
-     function onChange(e){
+     function onClickRadio(e){
          var $this = $(e.target);
 
          if( !($this.hasClass('yes')) ){
-             radioInputs.toggleClass('yes');
+             links.toggleClass('yes');
              $this.prev().select(); // radio
          };
      }
 
-     function onClick(e){
+     function onClickCheckbox(e){
          var $this = $(e.target);
 
          $this.toggleClass('yes');
          $this.prev().select(); // check
      }
 
-     radioInputs.click(onChange);
-
-     radioBox.on('click','span', onChange);
-     checkBox.on('click','span', onClick);
+     radioBox.on('click','a', onClickRadio);
+     checkBox.on('click','a', onClickCheckbox);
 
  })
 

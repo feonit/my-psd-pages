@@ -54,7 +54,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-.inputs-sprite, #radio input[type="radio"] + span, #radio input[type="radio"]:checked + span, #check-box label span, #check-box input[type=checkbox]:checked + span {
+.inputs-sprite, #radio-box input[type="radio"] + a, #radio-box input[type="radio"]:checked + a, #check-box label a, #check-box input[type=checkbox]:checked + a {
   background: url('../images/inputs-s6b6a3d7762.png') no-repeat;
 }
 
@@ -113,15 +113,17 @@ body {
 form {
   width: 770px;
   margin: 0 auto;
-  overflow-x: hidden;
-  overflow-y: hidden;
   padding-top: 20px;
-  /* overflow-y not work*/
 }
 
 h3 {
   font-size: 22.43px;
   display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: #2f1b15;
 }
 
 #list div {
@@ -149,10 +151,10 @@ h3 {
   background: url(../images/lines/line-1.png) 0 100% no-repeat;
 }
 #list div input.line2 {
-  background: url(../images/lines/line-1.png) -10px 100% no-repeat;
+  background: url(../images/lines/line-1.png) -12px 100% no-repeat;
 }
 #list div input.line3 {
-  background: url(../images/lines/line-1.png) -45px 100% no-repeat;
+  background: url(../images/lines/line-1.png) -50px 100% no-repeat;
 }
 #list div input.line4 {
   background: url(../images/lines/line-4.png) 0px 100% no-repeat;
@@ -161,35 +163,35 @@ h3 {
 /*
     radio
 */
-#radio {
+#radio-box {
   margin-top: 10px;
   position: relative;
   height: 60px;
   font-size: 22.43px;
 }
-#radio input[type="radio"] {
+#radio-box input[type="radio"] {
   visibility: hidden;
   position: absolute;
 }
-#radio input[type="radio"] + span {
+#radio-box input[type="radio"] + a {
   padding-left: 33px;
   padding-top: 2px;
   background-position: -74px 0;
 }
-#radio input[type="radio"]:checked + span {
+#radio-box input[type="radio"]:checked + a {
   background-position: -46px -28px;
 }
-#radio label {
+#radio-box label {
   padding-right: 10px;
 }
-#radio h3 span {
+#radio-box h3 span {
   font-size: 22px;
   line-height: 28px;
   color: #014f98;
   margin-right: 35px;
   position: relative;
 }
-#radio h3 span:after {
+#radio-box h3 span:after {
   content: '';
   position: absolute;
   width: 100%;
@@ -262,7 +264,7 @@ h3 {
   position: relative;
   /*for ie8 checkbox*/
 }
-#check-box label span {
+#check-box label a {
   display: block;
   font-size: 22.43px;
   padding-left: 25px;
@@ -270,7 +272,7 @@ h3 {
   padding-bottom: 5px;
   background-position: -23px -56px;
 }
-#check-box input[type=checkbox]:checked + span {
+#check-box input[type=checkbox]:checked + a {
   background-position: 0 -84px;
 }
 
@@ -302,31 +304,34 @@ h3 {
   left: 135px;
   top: -20px;
 }
-#slider-box #slider div span {
-  display: block;
+#slider-box #slider div {
   position: absolute;
+  top: 0;
+}
+#slider-box #slider div a {
   font-size: 11px;
   color: #2f1b15;
   font-family: 'PT Sans Bold',sans-serif;
   text-shadow: black 0 0 0;
+  display: block;
 }
-#slider-box #slider div span#w-1 {
+#slider-box #slider div#w-1 {
   padding-top: 28px;
-  background: url(../images/border.png) 0 0 no-repeat;
   left: 0;
+  background: url(../images/border.png) 0 0 no-repeat;
 }
-#slider-box #slider div span#w-2 {
+#slider-box #slider div#w-2 {
   padding-top: 28px;
   left: 142px;
   background: url(../images/border.png) 0 -12px no-repeat;
 }
-#slider-box #slider div span#w-3 {
+#slider-box #slider div#w-3 {
   padding-top: 28px;
   left: 370px;
   width: 170px;
   background: url(../images/border.png) 0 -12px no-repeat;
 }
-#slider-box #slider div span#w-4 {
+#slider-box #slider div#w-4 {
   padding-top: 35px;
   background: url(../images/border.png) 100% 0% no-repeat;
   right: 0;
@@ -357,10 +362,10 @@ h3 {
   background: url(../images/lines/line-1.png) 0 100% no-repeat;
 }
 #date input.line2 {
-  background: url(../images/lines/line-1.png) -10px 100% no-repeat;
+  background: url(../images/lines/line-1.png) -12px 100% no-repeat;
 }
 #date input.line3 {
-  background: url(../images/lines/line-1.png) -45px 100% no-repeat;
+  background: url(../images/lines/line-1.png) -50px 100% no-repeat;
 }
 #date input.line4 {
   background: url(../images/lines/line-4.png) 0px 100% no-repeat;

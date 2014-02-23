@@ -1,25 +1,25 @@
-.inputs-sprite, #radio input[type="radio"] + span, #radio input[type="radio"] + span.yes, #check-box input[type="checkbox"] + span, #check-box input[type="checkbox"] + span.yes {
+.inputs-sprite, #radio-box input[type="radio"] + a, #radio-box input[type="radio"] + a.yes, #check-box input[type="checkbox"] + a, #check-box input[type="checkbox"] + a.yes {
   background: url('../images/inputs-s6b6a3d7762.png') no-repeat;
 }
 
-#radio input[type="radio"] + span {
+#radio-box input[type="radio"] + a {
   background-position: -74px 0;
 }
-#radio input[type="radio"] + span.yes {
+#radio-box input[type="radio"] + a.yes {
   background-position: -46px -28px;
 }
 
-#check-box input[type="checkbox"] + span {
+#check-box input[type="checkbox"] + a {
   background-position: -23px -56px;
 }
-#check-box input[type="checkbox"] + span.yes {
+#check-box input[type="checkbox"] + a.yes {
   background-position: 0 -84px;
 }
 
-#radio span, #check-box span, h3 {
+#radio-box a, #check-box a, h3 {
   font-weight: bold;
 }
 
-#radio label {
+#radio-box label {
   line-height: 40px;
 }

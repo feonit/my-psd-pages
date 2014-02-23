@@ -2,8 +2,8 @@ $inputs-layout:diagonal;
 $inputs-spacing: 3px;
 @import "images/inputs/*.png";
 
-#radio input[type="radio"]{
-    & + span{
+#radio-box input[type="radio"]{
+    & + a{
         @include inputs-sprite(radiobox-unchecked);
 
         &.yes{
@@ -13,7 +13,7 @@ $inputs-spacing: 3px;
     }
 }
 #check-box input[type="checkbox"]{
-    & + span{
+    & + a{
         @include inputs-sprite(checkbox-unchecked);
 
         &.yes{
@@ -23,9 +23,9 @@ $inputs-spacing: 3px;
     }
 }
 
-#radio span, #check-box span, h3{
+#radio-box a, #check-box a, h3{
     font-weight: bold;
 }
-#radio label{
+#radio-box label{
     line-height: 40px;
 }

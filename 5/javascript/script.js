@@ -14,7 +14,7 @@
 
     MYAPP.dragMaster = MYAPP.dragMaster || (function(){
 
-        function fixEvent(e) {
+        function _fixEvent(e) {
             // получить объект событие для IE
             e = e || window.event;
 
@@ -34,7 +34,7 @@
             return e
         }
 
-        function getPosition(target){
+        function _getPosition(target){
             var left = 0;
 
             left += target.offsetLeft;
@@ -44,14 +44,14 @@
             }
         }
 
-        function getMouseOffset(target, event) {
-            var docPos	= getPosition(target);
+        function _getMouseOffset(target, event) {
+            var docPos	= _getPosition(target);
             return {
                 x:event.pageX - docPos.x
             }
         } // получить сдвиг target относительно курсора мыши
 
-        function makeDraggable(element, extensionUp, extensionMove){
+        function makeDraggable(element, _extensionUp, _extensionMove){
 
             if (typeof element !== "object" || !element){
 
@@ -67,12 +67,12 @@
 
 
             mouseMove = function (event){
-                event = fixEvent(event);
+                event = _fixEvent(event);
 
                 var left = event.pageX - mouseOffset.x;
 
-                if (extensionMove){
-                    if(extensionMove(left, event)){
+                if (_extensionMove){
+                    if(_extensionMove(left, event)){
                         element.style.left = left + 'px';
                         return false
                     }
@@ -80,12 +80,12 @@
             }
 
             mouseUp = function (event){
-                event = fixEvent(event);
+                event = _fixEvent(event);
 
                 var left = event.pageX - mouseOffset.x;
 
-                if (extensionUp){
-                    if(extensionUp(left, event)){
+                if (_extensionUp){
+                    if(_extensionUp(left, event)){
                         // очистить обработчики, т.к перенос закончен
                         document.onmousemove = null;
                         document.onmouseup = null;
@@ -98,14 +98,14 @@
             }
 
             mouseDown = function (event) {
-                event = fixEvent(event);
+                event = _fixEvent(event);
 
                 if (event.which!=1) {
                     return;
                 }
 
                 // получить сдвиг элемента относительно курсора мыши
-                mouseOffset = getMouseOffset(this, event);
+                mouseOffset = _getMouseOffset(this, event);
 
                 // эти обработчики отслеживают процесс и окончание переноса
                 document.onmousemove = mouseMove;
@@ -132,77 +132,113 @@
             makeDraggable = MYAPP.dragMaster.makeDraggable,
             pos = [-7, 135, 363, 746];
 
-        function nearValue(left){
+        function _animate(value){
+            _animate.id && clearInterval(_animate.id);
+
+            var current =  parseInt(this.activeElement.style.left || 0, 10),
+                to = pos[value-1];
+
+            var that = this.activeElement,
+                direct;
+
+            if (current === to){
+                return;
+            }
+
+            direct = current > to ? -1 : 1;
+
+            _animate.id = setInterval(function(){
+                current += direct;
+                that.style.left = current + 'px';
+                if (current === to){
+                    clearInterval(_animate.id);
+                }
+            }, TIME)
+        }
+
+        /*
+         * Условие для обработки события Up
+         *
+         * @param {Number} left текущая левая позиция
+         * */
+
+        function _extensionUp(left){
+
+            var value = _nearPosition(left),
+                inputValue = _indexPosition(value),
+                that = this;
+
+            setTimeout(function(){
+                _animate.call(that, inputValue);
+            }, 0);
+
+            this.inputNode.value = inputValue;
+            this.inputNode.setAttribute('value', inputValue);
+            return true;
+        }
+
+        /*
+         * Вычисление ближней позиции
+         *
+         * @param {Number} left текущая левая позиция
+         * */
+
+        function _nearPosition(left){
             return pos.reduce(function(x,y){
                 return Math.abs(x-left) < Math.abs(y-left)? x : y
             })
         }
 
-        function indexPosition(value){
-            return pos.indexOf(value);
+        function _indexPosition(value){
+            return pos.indexOf(value) + 1;
+        }
+
+        /*
+        * Условие для обработки события Move
+        *
+        * @param {Number} left текущая левая позиция
+        * */
+
+        function _extensionMove(left){
+            if(left >= pos[0] && left <= pos[pos.length-1]){
+                return true;
+            }
+        }
+
+        function _isNumber(value){
+            return typeof  value === "number" && isFinite(value);
         }
 
         return {
+
+            inputNode: null,
+            activeElement: null,
+
+            set: function(value){
+                if (!_isNumber(value)) {
+                    return new Error('Bad argument');
+                }
+                if (value < 1 || value > pos.length){
+                    return new Error('Bad value');
+                }
+                this.inputNode.value = value;
+                _animate.call(this, value);
+                return this;
+            },
+            get: function(){
+                return this.inputNode.value;
+            },
             init : function(){
-                var slider = document.getElementById('slider'),
-                    activeElement = slider.getElementsByTagName('img')[0],
-                    input = slider.getElementsByTagName('input')[0];
+                var slider = document.getElementById('slider');
 
-                function animate(from, to){
-                    from = parseInt(from, 10);
-                    to = parseInt(to, 10);
+                this.inputNode = slider.getElementsByTagName('input')[0];
+                this.activeElement = slider.getElementsByTagName('img')[0];
 
-                    var abs = Math.abs(from - to);
+                makeDraggable(this.activeElement, _extensionUp.bind(this), _extensionMove.bind(this));
 
-                    if (from === to){
-                         return;
-                    }
+                _animate.call(this, this.inputNode.value);
 
-                    var direct = from > to ? -1 : 1,
-                        id;
-
-                    id = setInterval(function(){
-
-                        from += direct;
-
-                        activeElement.style.left = from + 'px';
-                        if (from === to){
-                            clearInterval(id);
-                        }
-                    }, TIME)
-                }
-
-                function setActiveElement(){
-                    var from = 0 /* or from activeElement.style.left*/ ,
-                        to = pos[input.getAttribute('value')-1];
-
-                    animate(from, to);
-                }
-
-                function extensionUp(left){
-
-                    var value = nearValue(left),
-                        inputValue = indexPosition(value);
-
-                    setTimeout(function(){
-                        animate(activeElement.style.left, value);
-                    }, 0);
-                    input.value = inputValue;
-                    input.setAttribute('value', inputValue);
-                    return true;
-                }
-
-                function extensionMove(left){
-                     if(left >= pos[0] && left <= pos[pos.length-1]){
-                         return true;
-                     }
-                }
-
-                makeDraggable(activeElement, extensionUp, extensionMove);
-
-                setActiveElement();
-
-                return input;
+                return this.inputNode;
             }
         }
 
