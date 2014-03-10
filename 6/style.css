@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    font-size: 1.5em;
+}
+header img{
+}
+header h1{
+    display: block;
+}
+
+main{
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+article{
+    float: left;
+    width: 61%;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+aside{
+    float:right;
+    width: 31%;
+    margin-left: 2%;
+}
+article, .b-side{
+    background: #edeae5;
+}
+
+.b-side{
+    margin-bottom: 30px;
+    padding: 5%;
+}
+figure{
+    background: #d9dabb; /* Цвет фона */
+    display: block; /* Блочный элемент */
+    padding: 2%;
+    text-align: center; /* Выравнивание по центру */
+    max-width: 96%;
+    margin: 0 auto;
+}
+figure.image-left{
+    float: left;
+    margin-right: 3%;
+    max-width: 40%;
+}
+figure.image-center{
+}
+figure img {
+    border: 2px solid #8b8e4b; /* Параметры рамки */
+    display: block;
+    margin: 0 auto;
+    max-width: 96%;
+}
+figure figcaption{
+    font-size: .8em;
+}
+mark{
+    background: #ffec82;
+    padding: 0 3px;
+    border: 1px dashed #333;
+}
+
+
+@media screen and (max-width: 900px){
+    article{
+        float: none;
+        width: 96%;
+    }
+    aside{
+        width: 100%;
+        margin-left: 0;
+    }
+    .b-side{
+        float:right;
+        width: 38%;
+    }
+    .b-side:first-child{
+        float:left;
+    }
+}
+@media screen and (max-width: 650px){
+    .b-side{
+        float: none;
+        width: 90%;
+        margin-bottom: 5%;
+    }
+    .b-side:first-child{
+        float:none;
+    }
+
+    header img{
+        display: none;
+    }
+    header nav{
+        margin: 0 auto;
+    }
+
+}
+@media screen and (max-width: 480px){
+    figure.image-left{
+        float: none;
+        min-width: 96%;
+        margin: 0 auto;
+    }
+}
+
+
+
+nav{
+    margin: 40px 0;
+}
+nav ul{
+    font: 14px Arial;
+    display: inline-table;
+    position: relative;
+}
+nav ul ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+nav ul ul li{
+    float: none;
+    position: relative;
+}
+nav ul ul ul{
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+ul li:hover > ul{
+    display: block;
+}
+nav li{
+    float: left;
+    list-style: none;
+    width: 140px;
+    text-align: center;
+}
+nav li a{
+    text-decoration: none;
+    display: block;
+    color: #ffffff;
+    background: #575757;
+    padding: 10px;
+    border-bottom: 2px solid #626262;
+}
+nav li a:hover{
+    color: #575757;
+    background: #c0c0c0;
+}
+
+header img{
+    max-width: 10%;
+    display: block;
+    float: left;
+}
+header nav{
+    float: right;
+}
+header{
+    height: 100px;
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 800px){
+    header img{
+        display: none;
+    }
+    header nav{
+    }
+    header nav ul{
+
+    }
+
+}
