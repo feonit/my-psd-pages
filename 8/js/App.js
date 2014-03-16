@@ -5,7 +5,6 @@
  * http://www.sencha.com/license
  */
 Ext.app.App = function(cfg){
-    Ext.BLANK_IMAGE_URL = 'ext-3.4.0/resources/images/default/s.gif';
 
     Ext.apply(this, cfg);
     this.addEvents({

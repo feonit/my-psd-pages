@@ -1,6 +1,8 @@
 MyDesktop = new Ext.app.App({
     init :function(){
         Ext.QuickTips.init();
+        Ext.BLANK_IMAGE_URL = 'lib/ext-3.4.0/resources/images/default/s.gif';
+
     },
 
     getModules : function(){
